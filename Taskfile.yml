@@ -4,10 +4,14 @@ tasks:
   default:
     cmds:
       - task: build
+      - task: lint
       - task: test
   build:
     cmds:
       - go build
+  lint:
+    cmds:
+      - go vet ./...
   test:
     preconditions:
       - test -f ./true
