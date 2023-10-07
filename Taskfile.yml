@@ -13,6 +13,13 @@ tasks:
     cmds:
       - go vet ./...
   test:
+    cmds:
+      - task: test:medium
+      - task: test:large
+  test:medium:
+    cmds:
+      - go test ./...
+  test:large:
     preconditions:
       - test -f ./true
     cmds:
